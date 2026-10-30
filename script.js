@@ -103,8 +103,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgCache = new Array(BASE).fill(null);
   CAROUSEL_ITEMS.forEach((item, i) => {
     const im = new Image();
-    im.crossOrigin = "anonymous";
-    im.onload = im.onerror = () => { imgCache[i] = im; };
+    im.onload = () => {
+      imgCache[i] = im;
+      draw();
+    };
+    im.onerror = () => {
+      if (im.dataset.fallback) return;
+      im.dataset.fallback = "true";
+      im.src = item.src.replace(/\.jpg$/, ".png");
+    };
     im.src = item.src;
   });
 
