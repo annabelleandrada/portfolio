@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annabelle Andrada — Web & Mobile Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#ff6b35",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+  <div style="position:absolute;width:0;height:0;overflow:hidden">
+    <svg width="0" height="0" style="position: absolute;">
+      <defs>
+        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.03 0.03" numOctaves="2" seed="92" result="noise" />
+          <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+          <feDisplacementMap in="SourceGraphic" in2="blurred" scale="140" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar"
+    class="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[90%] md:w-[800px] px-6 md:px-8 py-4 flex justify-between items-center z-50 rounded-full">
+    <!-- Logo -->
+    <div class="text-2xl font-bold text-white logo">Annabelle</div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex gap-12 items-center">
+      <a href="#home" class="text-white text-sm font-medium hover:opacity-70">Home</a>
+      <a href="#about" class="text-white text-sm font-medium hover:opacity-70">About</a>
+      <a href="#projects" class="text-white text-sm font-medium hover:opacity-70">Projects</a>
+
+      <!-- Button -->
+      <a href="#contact"
+        class="group relative inline-flex items-center w-[165px] h-[48px] rounded-full overflow-hidden bg-white font-semibold pr-7">
+        <span
+          class="absolute right-1 top-1 bottom-1 w-10 h-10 rounded-full bg-orange-500 pl-2.5 flex items-center justify-start text-white text-xl transition-all duration-500 group-hover:right-1 group-hover:w-[calc(100%-8px)]">
+          <i class="uil uil-arrow-right"></i>
+        </span>
+        <span
+          class="relative z-10 w-full text-center text-black text-sm transition-all duration-500 group-hover:text-white group-hover:translate-x-5">
+          Get in touch
+        </span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="md:hidden text-white text-2xl">
+      <i class="uil uil-bars"></i>
+    </button>
+  </nav>
+
+  <div id="mobileMenu"
+    class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] rounded-2xl p-6 hidden flex flex-col gap-6 text-center z-40">
+    <a href="#home" class="text-white text-sm">Home</a>
+    <a href="#about" class="text-white text-sm">About</a>
+    <a href="#projects" class="text-white text-sm">Projects</a>
+    <!-- Button -->
+    <a href="#contact"
+      class="group relative inline-flex items-center w-full h-[48px] rounded-full overflow-hidden bg-white font-semibold pr-7">
+      <span
+        class="absolute right-1 top-1 bottom-1 w-10 h-10 rounded-full bg-orange-500 pl-2.5 flex items-center justify-start text-white text-xl transition-all duration-500 group-hover:right-1 group-hover:w-[calc(100%-8px)]">
+        <i class="uil uil-arrow-right"></i>
+      </span>
+      <span
+        class="relative z-10 w-full text-center text-black text-sm transition-all duration-500 group-hover:text-white group-hover:translate-x-5">
+        Get in touch
+      </span>
+    </a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="min-h-screen hero-gradient relative flex flex-col justify-end md:justify-end items-center px-6 md:px-16 overflow-hidden rounded-b-[40px] md:rounded-b-[100px]">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
+
+    <!-- Epic Adam Image (Left/Bottom) -->
+    <div class="epic-adam-wrapper">
+      <div class="epic-rays">
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+      </div>
+      <div class="epic-aura"></div>
+      <div class="epic-image-container">
+        <img src="greek-war-trophy.png" alt="Ornate Greek shield, helmet, sword, and marble relics" />
+      </div>
+    </div>
+
+    <!-- Epic God Image (Right/Top) -->
+    <div class="epic-god-wrapper">
+      <div class="epic-rays">
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+      </div>
+      <div class="epic-aura"></div>
+      <div class="epic-image-container">
+        <img src="marble-titan.png" alt="Marble titan among ancient ruins" />
+      </div>
+    </div>
+
+    <!-- Content (properly positioned) -->
+    <div
+      class="max-w-[1400px] hero-content flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mx-auto w-full z-20 mb-10 md:mb-5 relative">
+      <div>
+        <h2 class="text-base md:text-xl font-medium mb-3 opacity-90">
+          Hey, I'm Annabelle
+        </h2>
+
+        <h1 class="text-[2.2rem] md:text-[3.5rem] font-extrabold leading-tight tracking-[-1px] md:tracking-[-3px]">
+          Web & Mobile<br class="hidden md:block" />
+          Developer
+        </h1>
+      </div>
+
+      <div class="max-w-full md:max-w-[450px] text-left">
+        <h3 class="text-2xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight">
+          Great interfaces should just work.
+        </h3>
+        <p class="text-sm md:text-base opacity-90 leading-relaxed">
+          I build clean, responsive digital experiences that make everyday tasks feel simple and intuitive.</p>
+      </div>
+    </div>
+
+    <!-- Services Strip -->
+    <div class="grid grid-cols-2 md:grid-cols-3 z-20 pb-8 md:pb-10 w-full services-strip">
+      <div class="p-6 md:p-10 transition-all hover:bg-black/20">
+        <h4 class="text-orange-500 text-xs md:text-sm mb-2 font-semibold">
+          #01
+        </h4>
+        <h3 class="text-base md:text-xl font-bold">Frontend Development</h3>
+      </div>
+      <div class="p-6 md:p-10 transition-all hover:bg-black/20">
+        <h4 class="text-orange-500 text-xs md:text-sm mb-2 font-semibold">
+          #02
+        </h4>
+        <h3 class="text-base md:text-xl font-bold">Mobile Development</h3>
+      </div>
+      <div class="p-6 md:p-10 transition-all hover:bg-black/20">
+        <h4 class="text-orange-500 text-xs md:text-sm mb-2 font-semibold">
+          #03
+        </h4>
+        <h3 class="text-base md:text-xl font-bold">UI/UX Design</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 md:py-32 md:pb-0 px-6 md:px-16 pb-0 max-w-[1400px] mx-auto">
+    <h4 class="text-orange-500 text-xs md:text-sm font-semibold mb-3 md:mb-4 uppercase tracking-[2px]">
+      Behind the Code
+    </h4>
+
+    <h2 class="text-[2.2rem] md:text-[3.5rem] font-extrabold mb-6 leading-tight">
+      Building Tools That Make Work Simpler
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-10">
+      <div>
+        <p class="text-base md:text-lg leading-relaxed opacity-80 mb-6">
+          I enjoy combining thoughtful design with clear, reliable development to create digital experiences that feel effortless to use.
+        </p>
+        <p class="text-base md:text-lg leading-relaxed opacity-80 mb-6">
+          Curious by nature. Careful with the details. Focused on building interfaces that feel clear and work well.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-base md:text-lg leading-relaxed opacity-80 mb-6">
+          I bring a balance of functionality and polish to every project, whether it is a new build or an existing codebase.
+        </p>
+        <p class="text-base md:text-lg leading-relaxed opacity-80 mb-6">
+          I believe solid products come from understanding real requirements
+          and iterating relentlessly until they work.
+        </p>
+      </div>
+    </div>
+
+    <h4 class="text-orange-500 text-xs md:text-sm font-semibold mb-3 md:mb-4 uppercase tracking-[2px] mt-12 md:mt-10">
+      Who I Am
+    </h4>
+
+    <h2 class="text-[2.2rem] md:text-[3.5rem] font-extrabold mb-6 leading-tight">
+      Code with Purpose and Personality
+    </h2>
+
+    <p class="text-base md:text-xl opacity-80 mb-12 md:mb-16 leading-relaxed">
+      Add a short introduction about your experience, the kinds of projects you enjoy, and the tools you use. Replace this starter copy with details that sound like you.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 md:py-32 px-6 md:px-16 pb-0 pt-15">
+    <!-- Carousel Banner (Container for canvas & absolute floating text overlays) -->
+    <div class="carousel-banner w-full h-[50vh] md:h-[80vh] relative flex items-center justify-center overflow-hidden">
+
+      <!-- Floating Text at Top -->
+      <div class="absolute -top-5 left-0 right-0 z-10 text-center pt-4 md:pt-5 px-4 md:px-0 pointer-events-none">
+        <h4 class="text-orange-500 text-xs md:text-sm font-semibold mb-2 md:mb-4 uppercase tracking-[2px]">
+          Selected Work
+        </h4>
+        <h2 class="text-2xl md:text-[2.5rem] font-bold mb-4 md:mb-6 leading-tight tracking-widest">
+          Projects
+        </h2>
+        <p class="text-sm md:text-base opacity-70 mb-10 md:mb-16 leading-relaxed">
+          Thoughtful design, seamless development
+        </p>
+      </div>
+
+      <!-- Curved Canvas Carousel -->
+      <div class="canvas-wrap w-full h-full absolute inset-0 flex items-center justify-center">
+        <canvas id="projectsCanvas" role="link" tabindex="0" aria-label="Project carousel. Select a project to open its details." style="display:block; width:100%; height:100%; cursor:pointer;"></canvas>
+      </div>
+
+      <!-- Floating Info Cards at Bottom -->
+      <div
+        class="absolute bottom-3 sm:bottom-6 md:bottom-12 left-1/2 transform -translate-x-1/2 z-10 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 md:gap-6 w-[90%] sm:w-auto sm:max-w-[60%] pointer-events-none px-2 sm:px-0">
+        <div class="text-center">
+          <h4 class="text-orange-500 text-xs sm:text-sm mb-1 font-semibold">#01</h4>
+          <h3 class="text-[10px] sm:text-xs font-semibold">Strategy &amp; Planning</h3>
+        </div>
+        <div class="text-center">
+          <h4 class="text-orange-500 text-xs sm:text-sm mb-1 font-semibold">#02</h4>
+          <h3 class="text-[10px] sm:text-xs font-semibold">Design &amp; Development</h3>
+        </div>
+        <div class="text-center">
+          <h4 class="text-orange-500 text-xs sm:text-sm mb-1 font-semibold">#03</h4>
+          <h3 class="text-[10px] sm:text-xs font-semibold">Launch &amp; Growth</h3>
+        </div>
+        <div class="text-center">
+          <h4 class="text-orange-500 text-xs sm:text-sm mb-1 font-semibold">#04</h4>
+          <h3 class="text-[10px] sm:text-xs font-semibold">Ongoing Support</h3>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-xs opacity-60 max-w-2xl mx-auto mt-6 mb-10">Starter project previews from the reference layout. Replace these starter screenshots and project details with your own work before publishing.</p>
+    <!-- Modal -->
+    <div class="card-overlay" id="cardOverlay">
+      <div class="zoomed-card" id="zoomedCard">
+        <button class="close-btn" id="closeBtn">×</button>
+        <div class="zoomed-card-image-wrap">
+          <img src="" alt="Project Detail" class="zoomed-card-image" id="zoomedImage" />
+          <button class="fullscreen-btn" id="fullscreenBtn" title="View fullscreen" aria-label="View image fullscreen">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="zoomed-card-content">
+          <h3 class="zoomed-card-title" id="zoomedTitle">Project Title</h3>
+          <p class="zoomed-card-description" id="zoomedDescription">
+            Project description goes here...
+          </p>
+          <div class="zoomed-card-actions" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
+            <a id="zoomedDemoBtn" href="#"
+              style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #ff6b35, #ff4757); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; transition: all 0.3s ease; box-shadow: 0 8px 24px rgba(255,107,53,0.4);"
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(255,107,53,0.6)';"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(255,107,53,0.4)';">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              View Project Page
+            </a>
+            <a id="zoomedGithubBtn" href="#" target="_blank" rel="noopener noreferrer"
+              style="display: inline-flex; align-items: center; gap: 8px; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; transition: all 0.3s ease;"
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.background='#2a2a2a';"
+              onmouseout="this.style.transform='translateY(0)'; this.style.background='#1a1a1a';">
+              <i class="uil uil-github-alt" style="font-size: 16px;"></i>
+              GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Image Lightbox -->
+    <div class="image-lightbox" id="imageLightbox">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close fullscreen view">×</button>
+      <img src="" alt="Fullscreen project preview" id="lightboxImage" />
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 md:py-25 px-6 md:px-16 bg-black max-w-[1400px] mx-auto">
+    <div class="max-w-[1400px] mx-auto">
+      <h4 class="text-orange-500 text-xs md:text-sm font-semibold mb-2 md:mb-4 uppercase tracking-[2px]">
+        Services
+      </h4>
+      <h2 class="text-2xl md:text-[3.5rem] font-extrabold mb-4 md:mb-6 leading-tight">
+        What I Can Help You With
+      </h2>
+      <p class="text-base md:text-xl opacity-80 mb-10 md:mb-16 leading-relaxed">
+        From strategy to visuals, I offer tailored services to help your brand
+        grow with clarity and impact.
+      </p>
+
+      <div class="grid grid-cols-1 p-4 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-12 max-w-7xl mx-auto">
+        <!-- Card 1: UI/UX Design -->
+        <div class="art-deco-card card-1 mb-6 md:mb-0 md:scale-90">
+          <div class="corner top left"></div>
+          <div class="corner top right"></div>
+          <div class="corner bottom left"></div>
+          <div class="corner bottom right"></div>
+
+          <h3 class="text-lg md:text-2xl font-semibold md:font-bold mb-4">UI/UX Design</h3>
+
+          <div class="art-deco-content">
+            <div class="art-deco-item">
+              <h4 class="text-base md:text-lg">User Research</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Wireframing & Prototyping</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Interface Design</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Usability Testing</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Design Systems</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Frontend Development -->
+        <div class="art-deco-card card-2 mb-6 md:mb-0">
+          <div class="corner top left"></div>
+          <div class="corner top right"></div>
+          <div class="corner bottom left"></div>
+          <div class="corner bottom right"></div>
+
+          <h3 class="text-lg md:text-2xl font-semibold md:font-bold mb-4">
+            Frontend Development
+          </h3>
+
+          <div class="art-deco-content">
+            <div class="art-deco-item">
+              <h4 class="text-base md:text-lg">HTML, CSS & JavaScript</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>React JS & Tailwind CSS</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>React Native (Expo)</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Next.js &amp; Vite</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Responsive &amp; Accessible UI</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Design Strategy -->
+        <div class="art-deco-card card-3 mb-6 md:mb-0 md:scale-90">
+          <div class="corner top left"></div>
+          <div class="corner top right"></div>
+          <div class="corner bottom left"></div>
+          <div class="corner bottom right"></div>
+
+          <h3 class="text-lg md:text-2xl font-semibold md:font-bold mb-4">Design Strategy</h3>
+
+          <div class="art-deco-content">
+            <div class="art-deco-item">
+              <h4 class="text-base md:text-lg">Visual Identity</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Design Audits</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Competitive Analysis</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Information Architecture</h4>
+              <div class="art-deco-divider"></div>
+            </div>
+
+            <div class="art-deco-item">
+              <h4>Design Consulting</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 md:py-32 px-6 md:px-16 max-w-[1400px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
+      <!-- Left Column -->
+      <div>
+        <h4 class="text-orange-500 text-xs md:text-sm font-semibold mb-2 md:mb-4 uppercase tracking-[2px]">
+          Contact Me
+        </h4>
+
+        <h1 class="text-[2rem] md:text-[3.5rem] font-extrabold mb-4 md:mb-6 leading-tight">
+          Let's Build Something That Works
+        </h1>
+
+        <p class="text-base md:text-lg lg:text-xl text-gray-400 mb-6 md:mb-8 leading-relaxed">
+          Whether you need a new feature shipped or a full application built
+          from scratch, I'm here to turn your requirements into working
+          software.
+        </p>
+
+        <p class="text-sm md:text-base text-gray-500 mb-8 md:mb-12 leading-relaxed">
+          Open to remote roles and freelance work. Fill out the form or drop
+          me a message—let's see how we can work together.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex gap-4 md:gap-6">
+          <a class="w-10 h-10 md:w-12 md:h-12 border-2 border-gray-700 rounded-full flex items-center justify-center hover:border-orange-500 transition-colors"
+            href="#contact">
+            <i class="uil uil-linkedin-alt text-lg md:text-xl"></i>
+          </a>
+          <a class="w-10 h-10 md:w-12 md:h-12 border-2 border-gray-700 rounded-full flex items-center justify-center hover:border-orange-500 transition-colors"
+            href="#contact">
+            <i class="uil uil-github-alt text-lg md:text-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column - Form -->
+      <div class="mt-10 lg:mt-0 p-6 md:p-10 bg-[#141414] rounded-[30px]">
+        <form id="contactForm" action="https://formsubmit.co/annabelleandrada08@gmail.com" method="POST" class="space-y-6">
+          <!-- Name Fields -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-gray-400 text-sm mb-2">
+                First name <span class="text-orange-500">*</span>
+              </label>
+              <input type="text" name="first_name" placeholder="Jane"
+                class="w-full bg-neutral-800 border-2 border-transparent rounded-full px-4 md:px-6 py-3 text-xs md:text-sm text-white placeholder-gray-600 focus:outline-none focus:border-orange-500 transition-colors"
+                required />
+            </div>
+            <div>
+              <label class="block text-gray-400 text-sm mb-2">
+                Last name <span class="text-orange-500">*</span>
+              </label>
+              <input type="text" name="last_name" placeholder="Smith"
+                class="w-full bg-neutral-800 border-2 border-transparent rounded-full px-4 md:px-6 py-3 text-xs md:text-sm text-white placeholder-gray-600 focus:outline-none focus:border-orange-500 transition-colors"
+                required />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-gray-400 text-sm mb-2">
+              Email <span class="text-orange-500">*</span>
+            </label>
+            <input type="email" name="email" placeholder="jane@email.com"
+              class="w-full bg-neutral-800 border-2 border-transparent rounded-full px-4 md:px-6 py-3 text-xs md:text-sm text-white placeholder-gray-600 focus:outline-none focus:border-orange-500 transition-colors"
+              required />
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label class="block text-gray-400 text-sm mb-2">
+              Message <span class="text-orange-500">*</span>
+            </label>
+            <textarea name="message" placeholder="Type your message..." rows="6"
+              class="w-full bg-neutral-800 border-2 border-transparent rounded-3xl px-4 md:px-6 py-4 text-xs md:text-sm text-white placeholder-gray-600 focus:outline-none focus:border-orange-500 transition-colors resize-none"
+              required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submitBtn"
+            class="w-full bg-orange-600 hover:bg-orange-500 text-white text-xs md:text-sm font-medium py-3.5 px-6 md:px-8 rounded-full transition-colors">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 md:py-32 px-6 md:px-16 bg-neutral-900 overflow-x-hidden">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-10 md:gap-24 items-start">
+        <div class="md:sticky md:top-[150px] w-full">
+          <h4 class="text-orange-500 text-xs md:text-sm font-semibold mb-3 md:mb-4 uppercase tracking-[2px]">
+            Frequently Asked Questions
+          </h4>
+          <h2 class="text-[2rem] md:text-[3.5rem] font-extrabold leading-tight mb-4 md:mb-6">
+            Answers to Common Questions
+          </h2>
+          <p class="text-base md:text-lg opacity-70 leading-relaxed mb-6 md:mb-8">
+            From timelines to process details, here are quick answers to the
+            most frequent questions I get.
+          </p>
+          <a href="#contact"
+            class="group relative inline-flex items-center w-[165px] h-[48px] rounded-full overflow-hidden bg-white font-semibold pr-7">
+            <span
+              class="absolute right-1 top-1 bottom-1 w-10 h-10 rounded-full bg-orange-500 pl-2.5 flex items-center justify-start text-white text-xl transition-all duration-500 ease-in-out group-hover:right-1 group-hover:w-[calc(100%-8px)]">
+              <i class="uil uil-arrow-right"></i>
+            </span>
+            <span
+              class="relative z-10 w-full text-center text-black text-sm transition-all duration-500 ease-in-out group-hover:text-white group-hover:translate-x-5">
+              Contact Me
+            </span>
+          </a>
+        </div>
+
+        <div class="w-full">
+          <div
+            class="faq-item bg-neutral-950 rounded-[25px] mb-5 overflow-hidden border-2 border-transparent transition-colors hover:border-orange-600">
+            <div
+              class="faq-question p-5 px-6 md:px-8 cursor-pointer flex justify-between items-center font-semibold text-sm md:text-base transition-colors hover:bg-white/[0.02]">
+              <span>What's your tech stack?</span>
+              <i class="uil uil-plus faq-icon text-2xl text-orange-500"></i>
+            </div>
+            <div class="faq-answer px-6 md:px-8">
+              <p class="opacity-70 leading-relaxed pb-6 md:pb-7">
+                Add your preferred tools and technologies here, with a short note about how you use them.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-neutral-950 rounded-[25px] mb-5 overflow-hidden border-2 border-transparent transition-colors hover:border-orange-600">
+            <div
+              class="faq-question p-5 px-6 md:px-8 cursor-pointer flex justify-between items-center font-semibold text-sm md:text-base transition-colors hover:bg-white/[0.02]">
+              <span>Are you open to full-time remote roles?</span>
+              <i class="uil uil-plus faq-icon text-2xl text-orange-500"></i>
+            </div>
+            <div class="faq-answer px-6 md:px-8">
+              <p class="opacity-70 leading-relaxed pb-6 md:pb-7">
+                Add a short answer about the opportunities you are currently open to.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-neutral-950 rounded-[25px] mb-5 overflow-hidden border-2 border-transparent transition-colors hover:border-orange-600">
+            <div
+              class="faq-question p-5 px-6 md:px-8 cursor-pointer flex justify-between items-center font-semibold text-sm md:text-base transition-colors hover:bg-white/[0.02]">
+              <span>Have you worked with real clients before?</span>
+              <i class="uil uil-plus faq-icon text-2xl text-orange-500"></i>
+            </div>
+            <div class="faq-answer px-6 md:px-8">
+              <p class="opacity-70 leading-relaxed pb-6 md:pb-7">
+                Share a little about your experience and link visitors to the projects you can discuss publicly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-black border-t border-white/10 py-12 md:py-16 px-6 md:px-16 pb-8">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 md:gap-16 mb-12">
+        <div>
+          <h3 class="text-2xl md:text-3xl mb-4 font-bold logo">Annabelle Andrada</h3>
+
+          <p class="text-sm md:text-base opacity-70 leading-relaxed mb-6">
+            Building useful digital experiences with thoughtful details and a clear point of view.
+          </p>
+          <div class="flex gap-4 md:justify-start justify-start">
+            <a href="#contact"
+              class="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center transition-all hover:bg-orange-500 hover:-translate-y-1">
+              <i class="uil uil-linkedin-alt"></i>
+            </a>
+            <a href="#contact"
+              class="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center transition-all hover:bg-orange-500 hover:-translate-y-1">
+              <i class="uil uil-github-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4 md:mb-6 text-orange-500 text-sm">
+            Quick Links
+          </h4>
+          <ul class="list-none">
+            <li class="mb-3">
+              <a href="#home" class="opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">Home</a>
+            </li>
+            <li class="mb-3">
+              <a href="#about" class="opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">About</a>
+            </li>
+            <li class="mb-3">
+              <a href="#projects"
+                class="opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">Projects</a>
+            </li>
+            <li class="mb-3">
+              <a href="#contact" class="opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4 md:mb-6 text-orange-500 text-sm">
+            Services
+          </h4>
+          <ul class="list-none">
+            <li class="mb-3">
+              <a href="#services"
+                class="text-sm md:text-base opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">Full
+                Stack Development</a>
+            </li>
+            <li class="mb-3">
+              <a href="#services"
+                class="text-sm md:text-base opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">Mobile
+                App Development</a>
+            </li>
+            <li class="mb-3">
+              <a href="#services"
+                class="text-sm md:text-base opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">UI/UX
+                Design</a>
+            </li>
+            <li class="mb-3">
+              <a href="#services"
+                class="text-sm md:text-base opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">Design
+                Strategy</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4 md:mb-6 text-orange-500 text-sm">
+            Contact
+          </h4>
+          <ul class="list-none">
+            <li class="mb-3">
+              <a href="mailto:annabelleandrada08@gmail.com"
+                class="text-sm md:text-base opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">annabelleandrada08@gmail.com</a>
+            </li>
+            <li class="mb-3">
+              <a href="tel:+639568030041"
+                class="text-sm md:text-base opacity-70 transition-all hover:opacity-100 hover:pl-1 inline-block">+63-956-803-0041</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-start md:items-center opacity-60 text-xs md:text-sm">
+        <p>© 2025 Annabelle Andrada. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
